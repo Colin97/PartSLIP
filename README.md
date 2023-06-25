@@ -53,6 +53,14 @@ make
 You can find the pre-trained checkpoints from [here](https://huggingface.co/datasets/minghua/PartSLIP/tree/main/models).
 For zero-shot inference, please use the pre-trained GLIP checkpoint (`glip_large_model.pth`). For few-shot inference, please use our few-shot checkpoints for each object category. Please download checkpoints to `models/`.
 
+Here is the code to download the checkpoint files for running demo.py:
+```
+!pip3 install huggingface_hub
+from huggingface_hub import hf_hub_download
+for model in ["glip_large_model.pth", "Chair", "Suitcase", "Refrigerator", "Lamp", "Kettle"]:
+    hf_hub_download(repo_id="minghua/PartSLIP", filename="models/%s.pth" % model, repo_type="dataset", local_dir="./", local_dir_use_symlinks=False)
+```
+
 ### Inference
 We provide 5 example point cloud files in `examples/`. You can use the following command to run both zero-shot and few-shot inferences for them after downloading 5+1 checkpoint files.
 ```
