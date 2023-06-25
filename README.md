@@ -57,7 +57,7 @@ Here is the code to download the checkpoint files for running demo.py:
 ```
 !pip3 install huggingface_hub
 from huggingface_hub import hf_hub_download
-for model in ["glip_large_model.pth", "Chair", "Suitcase", "Refrigerator", "Lamp", "Kettle"]:
+for model in ["glip_large_model", "Chair", "Suitcase", "Refrigerator", "Lamp", "Kettle"]:
     hf_hub_download(repo_id="minghua/PartSLIP", filename="models/%s.pth" % model, repo_type="dataset", local_dir="./", local_dir_use_symlinks=False)
 ```
 
