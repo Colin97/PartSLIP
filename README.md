@@ -100,7 +100,8 @@ data:
 
     b. superpoint generation: `reg` in `src/gen_superpoint.py::gen_superpoint()`. This parameters adjust the granuarlity of the super point generation. You may want to ensure the generated superpoints are not too coarse-grained (e.g., multiple chair legs are not segmented) or fine-grained (e.g., too many small super points).
 
-5. For zero-shot inference, you can change the prompts without extra training. Whereas for few-shot inference, changing prompts requires retraining.
+5.  For zero-shot text prompt, simply concatenating all part names (e.g., "arm, back, seat, leg, wheel") is sometimes better than including the object category as well (e.g., "arm, back, seat, leg, wheel of a chair", used in the paper). The mIoUs are 27.2 and 34.8 in our experiments.
+6.  For zero-shot inference, you can change the prompts without extra training. Whereas for few-shot inference, changing prompts requires retraining.
  
 ## Citation
 
